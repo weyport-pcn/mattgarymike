@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reach further. A page built for Matt, Gary and Mike</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="MyScribe beyond launch. A page built for Matt, Gary and Mike at Accuro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,700;1,9..40,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#1E1F22; --paper:#FAFAF8; --coral:#F6D9CF; --dot:#D9533F;
+    --sage:#DCEBD3; --mist:#D6E6EE; --lilac:#E6DDF3; --butter:#F6EBB5;
+    --violet:#6B4FA0; --soft:#5C5E66; --line:#E4E3DE;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"DM Sans",system-ui,sans-serif;background:var(--paper);color:var(--charcoal);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px}
+  section{padding:88px 0;position:relative}
+  section + section{border-top:1px solid var(--line)}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:18px}
+  h1{font-size:clamp(64px,16vw,120px);font-weight:900;letter-spacing:-.04em;line-height:.92}
+  h2{font-size:clamp(34px,7vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.05;margin-bottom:26px}
+  h1 em,h2 em{font-style:italic;color:var(--violet)}
+  h3{font-size:20px;font-weight:700;line-height:1.3;margin-bottom:6px}
+  p{margin-bottom:18px}
+  .lead{font-size:22px;line-height:1.5}
+  .soft{color:var(--soft)}
+  .big{font-size:26px;font-weight:800;line-height:1.3;letter-spacing:-.01em}
+
+  /* hero */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:72px 0}
+  .blob{position:absolute;border-radius:50%;z-index:0}
+  .hero .wrap{position:relative;z-index:1}
+  .icon{width:76px;height:76px;border-radius:20px;background:var(--lilac);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(30,31,34,.10);margin-bottom:40px}
+  .icon span{font-family:Georgia,serif;font-size:76px;font-weight:900;line-height:1;margin-top:34px}
+  .for{margin-top:44px;font-size:15px;line-height:1.6}
+  .scrollcue{margin-top:56px;font-size:14px;color:var(--soft);display:flex;align-items:center;gap:10px}
+  .scrollcue i{display:block;width:1px;height:36px;background:var(--charcoal);animation:cue 2s ease-in-out infinite;transform-origin:top}
+  @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  .quote{border-left:6px solid var(--lilac);padding:6px 0 6px 22px;margin:30px 0;font-size:26px;font-weight:800;line-height:1.3}
+  .cards{display:grid;gap:14px;margin:26px 0}
+  .c2{grid-template-columns:1fr 1fr}
+  .c3{grid-template-columns:1fr 1fr 1fr}
+  @media (max-width:640px){.c2,.c3{grid-template-columns:1fr}}
+  .card{border-radius:18px;padding:22px 22px 20px}
+  .card p{font-size:16px;margin:0;line-height:1.5}
+  .card.white{background:#fff;border:1px solid var(--line)}
+  .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--paper);margin-bottom:12px}
+
+  .steps{display:grid;gap:12px;margin:28px 0}
+  .step{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;transition:opacity .6s, transform .6s}
+  .step .n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--charcoal);color:var(--paper);font-weight:800;display:flex;align-items:center;justify-content:center}
+  .step p{margin:0;font-size:16px}
+  .one{background:var(--coral);border-radius:20px;padding:26px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .one p{margin:0;font-size:16px}
+
+  .pill{display:inline-flex;align-items:center;gap:9px;background:var(--charcoal);color:var(--paper);border-radius:99px;padding:10px 18px 10px 10px;font-weight:700;font-size:16px;white-space:nowrap;border:0;font-family:inherit;cursor:pointer}
+  .pill .q{width:26px;height:26px;border-radius:50%;background:var(--lilac);color:var(--charcoal);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:900;font-size:24px;line-height:1;padding-top:10px}
+  .pill .rec{width:9px;height:9px;border-radius:50%;background:var(--dot)}
+
+  .pointer{display:inline-flex;align-items:center;gap:10px;background:var(--butter);border-radius:99px;padding:8px 16px;font-size:15px;font-weight:700;margin:6px 0 22px}
+
+  .code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;background:var(--charcoal);color:#EDEBF5;border-radius:14px;padding:18px 20px;line-height:1.7;overflow-x:auto;white-space:nowrap}
+  .code .c{color:#B9B0CF}
+  .ok{display:inline-flex;align-items:center;gap:8px;background:var(--sage);border-radius:99px;padding:6px 16px;font-size:15px;font-weight:700;margin-top:14px}
+
+  .lst{list-style:none;margin:10px 0 24px}
+  .lst li{padding:12px 0 12px 30px;border-bottom:1px solid var(--line);position:relative;font-size:17px;line-height:1.5}
+  .lst li:before{content:"";position:absolute;left:0;top:19px;width:12px;height:12px;border-radius:50%;background:var(--lilac);border:1px solid #CFC3E6}
+
+  .dark{background:var(--charcoal);color:var(--paper)}
+  .dark p{color:#CFCFD4}
+
+  .flow{display:grid;gap:0;margin:26px 0}
+  .flow .f{display:flex;gap:18px;align-items:flex-start;padding:16px 0}
+  .flow .f b{flex:none;width:14px;height:14px;border-radius:50%;margin-top:7px;background:var(--charcoal)}
+  .flow .f p{margin:0}
+  .flow .f + .f{border-top:1px dashed var(--line)}
+
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0}
+  @media (max-width:520px){.metrics{grid-template-columns:1fr}}
+  .metric{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+  .metric .k{font-size:34px;font-weight:900;letter-spacing:-.02em;line-height:1;color:var(--violet);margin-bottom:8px}
+  .metric p{margin:0;font-size:15px;line-height:1.45}
+
+  .qs{counter-reset:q;list-style:none;margin:20px 0}
+  .qs li{counter-increment:q;position:relative;padding:16px 0 16px 48px;border-bottom:1px solid var(--line);font-size:17px;line-height:1.5}
+  .qs li:before{content:counter(q);position:absolute;left:0;top:16px;width:32px;height:32px;border-radius:50%;background:var(--mist);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+
+  .close{padding:110px 0 140px;text-align:left}
+  .sign{display:flex;align-items:center;gap:16px;margin-top:40px}
+  .sign .icon{width:52px;height:52px;border-radius:14px;margin:0;box-shadow:none}
+  .sign .icon span{font-size:50px;margin-top:22px}
+
+  .route{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;margin:26px 0}
+  .route .row{display:grid;grid-template-columns:1.1fr 1.3fr 1fr;gap:10px;padding:16px 20px;align-items:center;font-size:16px}
+  .route .row + .row{border-top:1px solid var(--line)}
+  .route .head{background:var(--charcoal);color:var(--paper);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .route .model{display:inline-block;background:var(--mist);border-radius:99px;padding:4px 12px;font-weight:700;font-size:15px}
+  .route .on{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700}
+  .route .on i{width:34px;height:20px;border-radius:99px;background:var(--charcoal);position:relative;display:inline-block}
+  .route .on i:after{content:"";position:absolute;right:3px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--sage)}
+  .route .on.next i{background:#DAD8D2}
+  .route .on.next i:after{left:3px;right:auto;background:#fff}
+  @media (max-width:560px){.route .row{grid-template-columns:1fr 1fr}.route .row > :nth-child(3){grid-column:1/-1}.route .head > :nth-child(3){display:none}}
+  .layers{display:grid;gap:10px;margin:26px 0}
+  .layer{border-radius:18px;padding:18px 20px;display:flex;gap:16px;align-items:center}
+  .layer .lbl{flex:none;width:110px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+  .layer p{margin:0;font-size:16px}
+  .down{text-align:center;font-size:20px;line-height:1;color:var(--soft)}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* the live Scribe it pill */
+  .scribeit{position:fixed;right:18px;bottom:18px;z-index:50;box-shadow:0 8px 24px rgba(30,31,34,.22);transition:transform .2s}
+  .scribeit:hover{transform:translateY(-2px)}
+  .sheet-bg{position:fixed;inset:0;background:rgba(30,31,34,.35);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
+  .sheet{position:fixed;left:50%;bottom:0;transform:translate(-50%,110%);width:min(440px,100%);background:var(--paper);border-radius:26px 26px 0 0;padding:30px 26px 34px;z-index:70;transition:transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:0 -10px 40px rgba(0,0,0,.15)}
+  .open .sheet-bg{opacity:1;pointer-events:auto}
+  .open .sheet{transform:translate(-50%,0)}
+  .sheet .grab{width:44px;height:5px;border-radius:9px;background:var(--line);margin:0 auto 22px}
+  .sheet .ask{font-size:30px;font-weight:900;line-height:1.1;letter-spacing:-.02em;margin:10px 0 6px}
+  .sheet .btn{display:block;width:100%;border:0;border-radius:99px;padding:16px;font-family:inherit;font-size:17px;font-weight:700;margin-top:12px;cursor:pointer}
+  .sheet .yes{background:var(--coral);color:var(--charcoal)}
+  .sheet .no{background:transparent;color:var(--soft)}
+  .sheet .note{font-size:13px;color:var(--soft);text-align:center;margin-top:14px}
+  .written{background:var(--sage);border-radius:16px;padding:16px 18px;margin-top:16px;font-size:16px;line-height:1.5;display:none}
+  .written.show{display:block}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob" style="width:520px;height:520px;background:var(--lilac);right:-200px;bottom:-200px"></div>
+  <div class="blob" style="width:260px;height:260px;background:var(--coral);left:-110px;bottom:-120px"></div>
+  <div class="blob" style="width:120px;height:120px;background:var(--mist);right:12%;top:10%"></div>
+  <div class="wrap">
+    <div class="icon"><span>&lsquo;</span></div>
+    <div class="kicker">A page built for Matt, Gary and Mike</div>
+    <h1>Reach<br><em>further.</em></h1>
+    <p class="lead" style="margin-top:30px;max-width:560px">MyScribe beyond launch. Our effort goes into reach. The product keeps its shape, because this is a scribe. Here is how that builds the exit.</p>
+    <div class="for"><strong>From Mark Winterburn, Founder, MyScribe</strong><br><span class="soft">November 2026</span></div>
+    <div class="scrollcue"><i></i>Scroll, and keep an eye on the bottom corner</div>
+  </div>
+</section>
+
+<!-- THE ASK -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">The ask we will hear</div>
+    <h2>Everyone will want MyScribe to <em>do more.</em></h2>
+    <p class="lead">Once MyScribe is live, the requests will arrive quickly. Help me prepare for my appointment. Remind me it is on Tuesday. Keep track of my medication. Book the follow up.</p>
+    <p>Every one of these is reasonable. Together, they would slowly turn MyScribe into another health app with a long menu, more screens, more safety work and more things for a tired person to learn. We would be competing with everyone, on everyone else&rsquo;s ground.</p>
+    <div class="quote">Our answer is to do one thing really well, then take it everywhere.</div>
+    <p>MyScribe is a scribe. It listens when someone asks it to, writes down every word, and helps that person go back to what was said. That is rare, it is trusted, and it is exactly what people need.</p>
+    <div class="cards c2">
+      <div class="card white"><span class="tag" style="background:#F1F0EC">Doing more</span><h3>Prep, reminders, tracking, booking</h3><p class="soft">Each feature adds screens, safety cases and learning. The same people, asked to do more.</p></div>
+      <div class="card" style="background:var(--lilac)"><span class="tag">Reaching further</span><h3>The same scribe, one tap away, everywhere</h3><p>Each new place adds people. The scribe they trust, right where the conversation is happening.</p></div>
+    </div>
+    <p class="big" style="margin-top:30px">We add nothing to what was said, and do everything with it.</p>
+  </div>
+</section>
+
+<!-- WHERE OUR EFFORT GOES -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">Where our effort goes</div>
+    <h2>The shape stays the same. <em>This is a scribe.</em></h2>
+    <p class="lead">After launch, our effort goes into reach. The product keeps getting better without getting bigger.</p>
+    <div class="cards c3">
+      <div class="card" style="background:var(--lilac)"><span class="tag">Invest</span><h3>Reach</h3><p>Scribe it in the corner of everywhere. The listening layer, country by country. More languages, more voices, more organisations funding minutes.</p></div>
+      <div class="card" style="background:var(--sage)"><span class="tag">Refine</span><h3>What is already there</h3><p>A clearer, more faithful summary. Share that is easier to send and to read, growing into trusted people. A record that is quicker to search.</p></div>
+      <div class="card white"><span class="tag" style="background:#F1F0EC">Leave to others</span><h3>Everything else</h3><p>Appointment prep, reminders, medication tracking, booking. Plenty of apps already do these well, and each one is a place Scribe it can live.</p></div>
+    </div>
+    <div class="quote">The test for every idea after launch: does it help MyScribe reach more people, or hear them more faithfully?</div>
+    <p>Refinements to the summary and share pass that test, because they make every conversation more useful wherever it happens. New things to do wait. That focus keeps MyScribe simple to trust, simple to safety case, simple to place anywhere, and simple for a buyer to understand.</p>
+  </div>
+</section>
+
+<!-- THREE STEPS -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">The distance to the first scribe</div>
+    <h2>Three steps stand between a person and <em>their first scribe.</em></h2>
+    <p>Today, before anyone records a single conversation, three things have to go right.</p>
+    <div class="steps" id="steps">
+      <div class="step"><div class="n">1</div><div><h3>Hear about it</h3><p class="soft">Someone has to tell them, or they have to come across it at the right moment.</p></div></div>
+      <div class="step"><div class="n">2</div><div><h3>Find it in the store</h3><p class="soft">Search, check it is the right one, decide whether to trust it.</p></div></div>
+      <div class="step"><div class="n">3</div><div><h3>Download and sign up</h3><p class="soft">Install, create an account, give consent, then find the conversation.</p></div></div>
+    </div>
+    <p>Each step loses people. The ones we lose are often the people MyScribe matters most to: older, tired, anxious, less sure of their phone, five minutes away from a conversation they will struggle to remember.</p>
+    <div class="one">
+      <span class="pill"><span class="q">&lsquo;</span>Scribe it <span class="rec"></span></span>
+      <div style="flex:1;min-width:220px"><h3>Scribe it closes the distance.</h3><p>MyScribe appears where the person already is, at the moment the conversation is about to happen. One tap, and the scribe is ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIBE IT -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">Scribe it</div>
+    <h2>In the corner of <em>everywhere.</em></h2>
+    <div class="pointer">&#8600; Like the one in the corner of this page. Try it.</div>
+    <p>Scribe it is MyScribe, packaged so that anyone can put it wherever their people already are. It takes three simple forms.</p>
+    <div class="cards c3">
+      <div class="card" style="background:var(--lilac)"><h3>A quiet pill on a website</h3><p>Sitting in the corner or the footer, ready when someone needs it.</p></div>
+      <div class="card" style="background:var(--mist)"><h3>A button inside other apps</h3><p>One tap from the place people already manage their care.</p></div>
+      <div class="card" style="background:var(--butter)"><h3>A QR code on paper</h3><p>On a letter, a leaflet, a visitor sign in sheet.</p></div>
+    </div>
+    <div class="cards c2">
+      <div class="card" style="background:#fff;border:1px solid var(--line)"><span class="tag" style="background:var(--lilac)">The button</span><p class="big" style="font-size:22px">Scribe it. Go back to it.</p></div>
+      <div class="card" style="background:#fff;border:1px solid var(--line)"><span class="tag" style="background:var(--mist)">The handover</span><p class="big" style="font-size:22px">Missed something? Misheard something? It&rsquo;s all there.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOW CODE -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">Low code, no code</div>
+    <h2>Anyone can put it live, <em>in minutes.</em></h2>
+    <p class="lead">The test: a charity volunteer with only a basic understanding of tech gets it live on their own site, by themselves, before their tea goes cold.</p>
+    <p>Our model is Plausible. One line pasted into a website, followed by a check that tells you it worked.</p>
+    <div class="code"><span class="c">&lt;!-- MyScribe: Scribe it --&gt;</span><br>&lt;script src="https://hellomyscribe.com/scribe-it.js" data-place="your-code" defer&gt;&lt;/script&gt;</div>
+    <div class="ok">&#10003; Scribe it is live on your site</div>
+    <p class="soft" style="font-size:14px;margin-top:10px">Illustrative only.</p>
+    <h3 style="margin-top:30px">Open, with a guardrail</h3>
+    <p>Trust is our moat, so every placement starts with a simple sign up and plain terms. That gives each place its own code, a way for us to pause or remove any placement, and a living list of where MyScribe lives. Anyone can join. We always know who has.</p>
+  </div>
+</section>
+
+<!-- WHERE -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">Where it could live</div>
+    <h2>Health first. Then <em>everywhere that matters.</em></h2>
+    <p>Health is our proving ground because it is the toughest. Once MyScribe has earned trust there, Scribe it can travel to every place where a conversation is worth remembering.</p>
+    <h3 style="margin-top:8px">The first wave</h3>
+    <p class="soft" style="font-size:16px">Organisations whose people have conversations that matter, and who can place Scribe it themselves.</p>
+    <div class="cards c3">
+      <div class="card" style="background:var(--lilac)"><h3>Cancer support</h3><p>Macmillan and others, for conversations where so much is said at once.</p></div>
+      <div class="card" style="background:var(--mist)"><h3>Dementia care</h3><p>Dementia UK, families and carers who remember for someone else.</p></div>
+      <div class="card" style="background:var(--sage)"><h3>Councils and care</h3><p>Social care visits, care homes, carers&rsquo; assessments.</p></div>
+      <div class="card" style="background:var(--coral)"><h3>Legal and money</h3><p>A solicitor&rsquo;s appointment, a mortgage chat, a benefits call.</p></div>
+      <div class="card" style="background:var(--butter)"><h3>Everyday life</h3><p>The vet, the school meeting, the music chat with an old friend.</p></div>
+      <div class="card white"><h3>And beyond</h3><p>Other apps, Android, perhaps even games consoles.</p></div>
+    </div>
+    <div class="card dark" style="margin-top:14px"><span class="tag" style="background:var(--lilac);color:var(--charcoal)">In time</span><h3 style="font-size:22px">The platforms people already use</h3><p>The apps where people already manage their health and their lives. Each one reached through its own route, once MyScribe has the evidence, the safety case and the people to show for it.</p></div>
+  </div>
+</section>
+
+<!-- LISTENING -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">Listening that reaches everyone</div>
+    <h2>Reach is also about <em>who we can hear.</em></h2>
+    <p class="lead">A scribe in every corner is only as good as how faithfully it hears the person in front of it. The ideal listening models give us the greatest reach.</p>
+    <ul class="lst">
+      <li><strong>Every accent and dialect</strong>, from Portland to Glasgow to Lagos</li>
+      <li><strong>Many languages</strong>, and conversations that move between them</li>
+      <li><strong>Softly spoken people</strong>, and people whose speech is affected by illness or age</li>
+      <li><strong>Busy rooms</strong>: a ward, a caf&eacute;, a kitchen table with the radio on</li>
+      <li><strong>Three or more voices</strong>: a patient, a carer and a clinician, each written down as themselves</li>
+      <li><strong>Patchy signal and older phones</strong>, so reach includes the people with the least</li>
+    </ul>
+    <p>This is also our strongest story for commissioners. A scribe that hears everyone is an answer to health inequalities, and that is what ICBs pay for. Wherever a model is unsure, the words are <span style="background:var(--butter);padding:0 4px;border-radius:4px">highlighted</span>, so the record stays honest.</p>
+  </div>
+</section>
+
+<!-- LISTENING LAYER -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">The listening layer</div>
+    <h2>The right ears <em>for every country.</em></h2>
+    <p class="lead">No single listening model hears the whole world best. So MyScribe sits on a listening layer, and we choose which model hears each country, each language, even each kind of room.</p>
+    <p>MyScribe might run on Speechmatics in the UK and Deepgram in India. Each choice is a setting we switch on, backed by evidence, with everything the person sees staying exactly the same.</p>
+    <div class="route">
+      <div class="row head"><span>Where</span><span>Listening model</span><span>Status</span></div>
+      <div class="row"><span><strong>United Kingdom</strong><br><span class="soft" style="font-size:14px">English, every accent</span></span><span><span class="model">Speechmatics</span></span><span class="on"><i></i>On</span></div>
+      <div class="row"><span><strong>India</strong><br><span class="soft" style="font-size:14px">English, Hindi and more</span></span><span><span class="model">Deepgram</span></span><span class="on"><i></i>On</span></div>
+      <div class="row"><span><strong>The next country</strong><br><span class="soft" style="font-size:14px">Its own languages</span></span><span><span class="model" style="background:var(--butter)">Whichever hears it best</span></span><span class="on next"><i></i>Testing</span></div>
+    </div>
+    <p class="soft" style="font-size:14px;margin-top:-10px">Illustrative. Each pairing is decided by testing.</p>
+
+    <h3 style="margin-top:34px">How MyScribe is built in layers</h3>
+    <div class="layers">
+      <div class="layer" style="background:var(--coral)"><span class="lbl">The person</span><p>Asks first, records, reads the summary, asks the conversation. The same everywhere.</p></div>
+      <div class="down">&#8595;</div>
+      <div class="layer" style="background:var(--mist)"><span class="lbl">Listening</span><p>The best model for this country and language writes down every word.</p></div>
+      <div class="down">&#8595;</div>
+      <div class="layer" style="background:var(--sage)"><span class="lbl">Understanding</span><p>The summary and Ask Your Conversation, built from those words alone. Swappable too.</p></div>
+    </div>
+
+    <h3 style="margin-top:34px">How we choose</h3>
+    <ul class="lst">
+      <li><strong>Faithfulness</strong> to that country&rsquo;s accents, languages and the way people really talk</li>
+      <li><strong>Where the words are heard and held</strong>, matched to that country&rsquo;s law and what its people expect</li>
+      <li><strong>Several voices</strong> told apart clearly, in real rooms</li>
+      <li><strong>Everyday and medical words</strong> written down correctly</li>
+      <li><strong>Cost per minute</strong> that keeps MyScribe pennies, never pounds</li>
+      <li><strong>The same promise</strong> from every supplier: nothing kept, nothing used for training</li>
+    </ul>
+    <div class="card" style="background:var(--lilac);margin-top:10px">
+      <h3>Switched on with a setting. Signed off with evidence.</h3>
+      <p>Every model in every country is tested on consented test recordings before it goes live, compared against the one it would replace, and recorded in the safety case. People&rsquo;s own conversations are never used to test or train anything.</p>
+    </div>
+    <div class="quote" style="font-size:22px">No single supplier holds the keys to MyScribe. A buyer gets a scribe that can enter a new country on whichever model hears it best.</div>
+  </div>
+</section>
+
+<!-- HOW REACH PAYS -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">How reach pays</div>
+    <h2>Free to place. <em>Paid to use.</em></h2>
+    <p class="lead">Putting Scribe it anywhere costs nothing. Every minute of listening is paid for, by the person or by someone on their behalf.</p>
+    <div class="flow">
+      <div class="f"><b style="background:var(--coral)"></b><p><strong>People pay as they go.</strong> Pennies per minute, topped up in the app, exactly as at launch.</p></div>
+      <div class="f"><b style="background:var(--lilac)"></b><p><strong>Organisations fund their people.</strong> A charity or council that places Scribe it can load minutes behind its own code, so everyone arriving through them starts with credit.</p></div>
+      <div class="f"><b style="background:var(--mist)"></b><p><strong>Commissioners license populations.</strong> An ICB funds MyScribe for a whole area. Scribe it is how that population actually reaches it.</p></div>
+      <div class="f"><b style="background:var(--sage)"></b><p><strong>Gifted Minutes flows through it.</strong> Anyone can fund minutes for people who need them, and Scribe it puts those minutes within reach.</p></div>
+    </div>
+    <div class="quote" style="font-size:22px">Every placement is a relationship, and every relationship is a lead for a paid one.</div>
+  </div>
+</section>
+
+<!-- REACH AND RETURN -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">Reach and return</div>
+    <h2>Scribe it brings people in. <em>Trusted people brings them back.</em></h2>
+    <p>Appointments come and go, so MyScribe has to earn a place in someone&rsquo;s life between them. Reach solves the first conversation. Trusted people, the natural next step for share, solves the next one: a daughter reading Dad&rsquo;s summary, a carer asking a question of last week&rsquo;s visit, a family returning together.</p>
+    <p>The two work as a pair. Every placement brings someone new, and every trusted person they share with is another person who knows MyScribe before their own conversation that matters.</p>
+    <div class="cards c3" style="margin-top:30px">
+      <div class="card" style="background:var(--coral)"><span class="tag">Now</span><h3>Launch</h3><p>MyScribe in the stores, doing one thing beautifully.</p></div>
+      <div class="card" style="background:var(--lilac)"><span class="tag">December</span><h3>The 108</h3><p>Our first testers show us what people love and where they use it.</p></div>
+      <div class="card" style="background:var(--mist)"><span class="tag">Then</span><h3>Scribe it</h3><p>The first build once the beta shows people love MyScribe.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT A BUYER SEES -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">What a buyer sees</div>
+    <h2>Building toward <em>the exit.</em></h2>
+    <p>MyScribe never sells data and never trains AI on it, so its value lives in people, trust, distribution and brand. Reach grows all four, and gives us a clear set of numbers to build toward.</p>
+    <div class="metrics">
+      <div class="metric"><div class="k">Places</div><p>How many sites, apps and printed codes MyScribe lives in, and in which sectors.</p></div>
+      <div class="metric"><div class="k">People</div><p>How many people have recorded a conversation that mattered.</p></div>
+      <div class="metric"><div class="k">Return</div><p>How many come back, and how many bring a trusted person with them.</p></div>
+      <div class="metric"><div class="k">Payers</div><p>How many organisations and commissioners fund minutes for their people.</p></div>
+      <div class="metric"><div class="k">Voices</div><p>How many countries, languages and accents MyScribe hears faithfully, each on the model that hears it best.</p></div>
+      <div class="metric"><div class="k">Trust</div><p>An open Patient Recording Standard, a clean safety record, and a brand people recommend.</p></div>
+    </div>
+    <p>A product that already slots into other platforms with one line is also simple for a buyer to adopt. Scribe it makes MyScribe easy to love and easy to acquire.</p>
+  </div>
+</section>
+
+<!-- ENGINEERING -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">What reach asks of engineering</div>
+    <h2>The team behind it <em>after launch.</em></h2>
+    <p>Reaching further changes the shape of the engineering work. Fewer new screens, more partners, more places, more voices. Whoever builds the next chapter will be doing six things well.</p>
+    <div class="cards c2">
+      <div class="card" style="background:var(--lilac)"><h3>One owner</h3><p>A single engineer who knows MyScribe end to end and stays with it.</p></div>
+      <div class="card" style="background:var(--mist)"><h3>Partner ready</h3><p>Charity, council and platform conversations, held in UK hours alongside us.</p></div>
+      <div class="card" style="background:var(--sage)"><h3>UK where possible</h3><p>Listening and storage in the UK, for example Deepgram through Azure UK, as Accuro already runs.</p></div>
+      <div class="card" style="background:var(--coral)"><h3>Safety at every door</h3><p>Each new place Scribe it lives gets its safety case answer, side by side with the CSO.</p></div>
+      <div class="card" style="background:var(--butter)"><h3>A listening layer</h3><p>Listening models chosen and switched per country and language by a setting, each one tested before it goes live.</p></div>
+      <div class="card white"><h3>Gentle costs</h3><p>Running costs that stay predictable as reach grows, inside the agreed cap.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISES -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">What travels with it</div>
+    <h2>The same promises, <em>wherever it goes.</em></h2>
+    <ul class="lst">
+      <li>The memory belongs to the person</li>
+      <li>MyScribe listens only when asked</li>
+      <li>Audio is deleted once written down</li>
+      <li>Data is never sold, never used to train AI</li>
+      <li>Unclear words are always flagged</li>
+      <li>Ask Your Conversation returns the exact words</li>
+      <li>Summaries leave out medicine names and doses</li>
+      <li>Always branded MyScribe</li>
+    </ul>
+  </div>
+</section>
+
+<!-- QUESTIONS -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">For Matt, Gary and Mike</div>
+    <h2>Five questions <em>to think over.</em></h2>
+    <p class="lead">These sit alongside the decision on where MyScribe engineering lives after launch. I would value your view on each.</p>
+    <ol class="qs">
+      <li>What is the lightest possible Scribe it: a snippet that hands people into the app, or a recording experience that works in the browser for people who have yet to download MyScribe?</li>
+      <li>How does a pill, button or QR code hand a person into MyScribe with the fewest taps, while keeping them as a MyScribe person we can serve again?</li>
+      <li>How do organisation codes, sign up, terms and the installation check fit together, so placing Scribe it stays effortless and every placement stays accountable?</li>
+      <li>How do we build the listening layer so choosing a model for a country is a tested setting, and which models would you start with for the UK, given your Azure setup and options like Speechmatics?</li>
+      <li>Which engineering setup puts MyScribe in the best position to reach organisations and platforms well, and to grow toward the exit we have agreed?</li>
+    </ol>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close">
+  <div class="wrap reveal">
+    <h1 style="font-size:clamp(56px,13vw,96px)">Reach<br><em>further.</em></h1>
+    <p class="lead" style="margin-top:26px">For every conversation that matters.</p>
+    <div class="sign">
+      <div class="icon"><span>&lsquo;</span></div>
+      <div><strong>Mark Winterburn</strong><br><span class="soft" style="font-size:15px">Founder, MyScribe &middot; mark@hellomyscribe.com</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE SCRIBE IT -->
+<button class="pill scribeit" id="scribeit" aria-label="Scribe it"><span class="q">&lsquo;</span>Scribe it <span class="rec"></span></button>
+<div id="sheetwrap">
+  <div class="sheet-bg" id="sheetbg"></div>
+  <div class="sheet" role="dialog" aria-label="Scribe it">
+    <div class="grab"></div>
+    <div class="kicker" style="margin-bottom:6px">Ask first. You can read this out.</div>
+    <div class="ask">Do you mind<br>if I record this?</div>
+    <p class="soft" style="font-size:16px;margin:0">Just to help me remember.</p>
+    <button class="btn yes" id="yes">Yes, start recording</button>
+    <button class="btn no" id="no">Not now</button>
+    <div class="written" id="written"><strong>This is where MyScribe takes over.</strong><br>Missed something? Misheard something? It&rsquo;s all there.</div>
+    <div class="note">A preview of Scribe it. Nothing is recorded on this page.</div>
+  </div>
+</div>
+
+<script>
+  // reveal on scroll
+  var io = new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  // Scribe it sheet
+  var wrap=document.getElementById('sheetwrap'), written=document.getElementById('written');
+  function openS(){wrap.classList.add('open');written.classList.remove('show')}
+  function closeS(){wrap.classList.remove('open')}
+  document.getElementById('scribeit').addEventListener('click',openS);
+  document.querySelectorAll('.one .pill').forEach(function(p){p.addEventListener('click',openS)});
+  document.getElementById('sheetbg').addEventListener('click',closeS);
+  document.getElementById('no').addEventListener('click',closeS);
+  document.getElementById('yes').addEventListener('click',function(){written.classList.add('show')});
+</script>
+</body>
+</html>
